@@ -31,8 +31,12 @@ def main():
   for check, msg in checks:
       if check():
           print(msg)
-          sys.exit(1)
-          
+          everything_ok = False
+
+  if not everything_ok:
+    sys.exit(1)
+
+
   print("Everything Ok.")
   sys.exit(0)
 
