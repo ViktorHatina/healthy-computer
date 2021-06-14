@@ -20,6 +20,10 @@ def check_disk_full(disk, min_gb, min_percent):
     return True
   return False
 
+def check_cpu_constrained():
+  """Returns True if the cpu is having too much usagae, Flase otherwise"""
+  return psutil.cpu_percent(1) > 75
+
 def check_root_full():
     """Returns True if the root partition is full, False otherwise"""
     return check_disk_full(disk="/", min_gb=2, min_percent=10)
