@@ -40,6 +40,7 @@ def main():
   checks = [
     (check_reboot, "Pending Reboot."),
     (check_root_full, "Root partition full."),
+    (check_cpu_constrained, "CPU load too high"),
     (check_no_network, "No working network.")
   ]
   for check, msg in checks:
